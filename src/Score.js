@@ -5,7 +5,7 @@ import React from 'react';
 export default function Score(props){
  
     const className = `cardScore `
-    if(props.attempt == 0){
+    if(props.attempt === 0){
        window.location.reload();
     }
    

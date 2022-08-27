@@ -88,7 +88,7 @@ export default function WordCard(props) {
             }
             </div>
            <div >
-             <Score score = {dataState.counter} attempt ={countState.count}  word= {state.word} guess ={state.guess}/>
+             <Score score = {dataState.counter} attempt ={countState.count} completed = {state.completed} word= {state.word} guess ={state.guess}/>
            </div>
         
         </div>
