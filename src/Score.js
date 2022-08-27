@@ -11,7 +11,7 @@ export default function Score(props){
    
     
     return (
-       <div>
+       <div >
    
         <div className={className}>
             <span>word: {props.guess}</span>
