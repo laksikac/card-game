@@ -12,7 +12,7 @@ const prepareStateFromWord = (given_word) => {
     return {
         word,
         chars,
-        attempt: 1,
+        attempt: 0,
         guess: '',
         completed: false,
         
@@ -30,6 +30,12 @@ export default function WordCard(props) {
            counter: 0
         }
     )
+    const [countState, setCountState] = useState(
+        {
+           count: 3,
+           completed: false
+        }
+    )
 
     const activationHandler = c => {
 
@@ -38,15 +44,16 @@ export default function WordCard(props) {
         setState({ ...state, guess })
         if (guess.length === state.word.length) {
             if (guess === state.word) {
-                
-                console.log('yeah!')
                 setState({ ...state, guess: '', completed: true})
+                console.log('yeah!')
+                
                 plusScore()
             } else {
                 console.log('reset')
                 setState({ ...state, guess: '', attempt: state.attempt + 1 })
-                
-                window.location.reload();
+                attempt()
+                // window.location.reload()
+               
                
             }
         }
@@ -60,20 +67,28 @@ export default function WordCard(props) {
             setDataState({
                 counter: dataState.counter +1
             })
+            
     }
-   
+
+    const attempt = () =>{
+        setCountState({
+            count: countState.count - 1,
+           
+        })
+       
+    }
+ 
 
     
     return (
         <div>
             <div>
             {
-                state.chars.map((c, i) => <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt = {state.attempt} completed = {state.completed}/>)
-                
+                state.chars.map((c, i) => <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt = {state.attempt} completed = {state.completed}/>)               
             }
             </div>
            <div >
-             <Score score = {dataState.counter} />
+             <Score score = {dataState.counter} attempt ={countState.count}  word= {state.word} guess ={state.guess}/>
            </div>
         
         </div>

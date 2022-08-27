@@ -4,8 +4,7 @@ import CharacterCard from './CharacterCard';
 import WordCard from './WordCard';
 import Score from './Score';
 
-const word = ["Hello","Pencil"];
-const score = 0;
+const word = "Hello";
 function App() {
     
     return (
@@ -14,7 +13,7 @@ function App() {
            <h2>Spell the word below </h2>
            <h2>Ready Let's Go!!!</h2>
            
-           <WordCard value = {word[0]}/>
+           <WordCard value = {word}/>
            <CharacterCard/>
           
         </div>
