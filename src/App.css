@@ -1,7 +1,9 @@
 body{
+  position: relative;
   background-color: darkcyan;
 }
 .card {
+  position: relative;
   display: inline-block;
   text-align: center;
   width: 3em;
@@ -16,10 +18,12 @@ body{
   background: pink;
  }
  h2{
+  position: relative;
   text-align: center;
   color:aliceblue;
  }
  .cardScore {
+  position: relative;
   display:block;
   text-align: center;
   width: 7em;
@@ -29,5 +33,14 @@ body{
   background-color: rgb(226, 237, 151);
   
  }
- 
+ .popUp{
+  position: relative;
+  display:block;
+  text-align: center;
+  width: 20em;
+  font-size: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: auto auto;
+  background-color: rgb(137, 235, 204);
+ }
  
