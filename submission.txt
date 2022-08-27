@@ -1,0 +1,19 @@
+6310110417 นางสาวลักษิกา ดำแดง sec01
+
+อธิบายเกม
+    เกมนี้เป็นเกมเรียงลำดับตัวอักษรให้ถูกต้อง มีกำหนดจำนวนครั้งในการเล่น หากเรียงผิดเกิน 3 ครั้ง จะได้เรียงตัวอักษรใหม่ โดยจะสลับตำแหน่งตัวอักษรเดิม
+แต่ละครั้งที่เลือกตัวอักษรใด ตัวอักษรนั้นจะถูกแสดงในช่อง word: เพื่อบอกว่าเราเลือกตัวอักษรใดบ้าง ตามลำดับ หากเรียงลำดับถูก Score จะเพิ่มเป็น 1
+และมีข้อความ ขึ้นว่า Congratulations!, this word is HELLO    
+
+ปรับปรุงเกม logic โดยการ
+1)สร้าง component ใหม่ ชื่อ Score.js  ภายในนี้จะรับค่า parameter: score, completed, word, guess, attempt มาจาก component WordCard.js
+2)ภายใน WordCard.js เพิ่มเติมในส่วนของ
+    -จะ set state ของ dataState ซึ่งมีค่า counter = 0 และ สร้าง state อีกอันชื่อ countState มีค่า count = 3 
+    -สร้าง method ใหม่ชื่อ plusScore(เพิ่มค่า Score หากทายถูก)และ attempt(ลดค่า attempt หากทายผิด) และเรียกใช้ภายใน activationHandler 
+       หาก guess == word แล้วจะเรียก plusScore() เพื่อให้ counter = dataState.counter + 1 
+       หากยังไม่ใช่ เรียกใช้ attempt() เพื่อให้ค่า count = countState.count -1
+         และถ้า ค่า count = 0 จะทำการ reload หน้าเว็บ เพื่อสลับลำดับตัวอักรใหม่
+3)ภายใน Score.js ส่วน return มีการใช้ condition 
+    -หาก completed เป็น true (หมายความว่าเรียงลำดับตัวอักษรถูก) จะแสดงข้อความ Congratulations!, this word is HELLO  
+    -หาก completed เป็น false จะไม่แสดงข้อความใดๆ
+4)มีการจัดรูปแบบหน้า UI

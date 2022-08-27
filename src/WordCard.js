@@ -33,7 +33,7 @@ export default function WordCard(props) {
     const [countState, setCountState] = useState(
         {
            count: 3,
-           completed: false
+           
         }
     )
 
@@ -45,8 +45,7 @@ export default function WordCard(props) {
         if (guess.length === state.word.length) {
             if (guess === state.word) {
                 setState({ ...state, guess: '', completed: true})
-                console.log('yeah!')
-                
+                console.log('yeah!')               
                 plusScore()
             } else {
                 console.log('reset')
