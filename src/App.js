@@ -16,7 +16,7 @@ function App() {
            
            <WordCard value = {word[0]}/>
            <CharacterCard/>
-           <Score value ={0}/>
+          
         </div>
     );
 }

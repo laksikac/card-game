@@ -19,5 +19,15 @@ body{
   text-align: center;
   color:aliceblue;
  }
+ .cardScore {
+  display:block;
+  text-align: center;
+  width: 7em;
+  font-size: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 1em 9em;
+  background-color: rgb(226, 237, 151);
+  
+ }
  
  
